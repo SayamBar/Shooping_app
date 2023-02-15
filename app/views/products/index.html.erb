@@ -1,0 +1,9 @@
+<% @products.each do |i| %>
+    <a href="/products/<%= i.id %>">
+        <%= i.title %><br>
+    </a>
+    <%= i.description %><br>
+    <%= i.price %><br>
+<% end %>
+
+<%= link_to "Create Products", new_product_path %>
