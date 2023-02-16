@@ -1,9 +1,16 @@
-<% @products.each do |i| %>
-    <a href="/products/<%= i.id %>">
-        <%= i.title %><br>
-    </a>
-    <%= i.description %><br>
-    <%= i.price %><br>
-<% end %>
+<div class="index">
+    <% @products.each do |i| %>
+        <div class="content">
+            <table>
+            <tr><a href="/products/<%= i.id %>">
+                <%= i.title %>
+            </a></tr>
+            <tr><%= i.description %></tr>
+            <tr><%= i.price %></tr>
+            <tr><%= render 'products/attachment', product: i %></tr>
+            </table>
+        </div>
+    <% end %>
+</div>
 
 <%= link_to "Create Products", new_product_path %>

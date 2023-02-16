@@ -1,0 +1,14 @@
+<%# <%= stylesheet_link_tag "/app/assets/stylesheets/indekx.css" %> 
+
+
+<% if product.file.attached? %>
+    <div>
+        <% if product.file.image? %>
+            <%= image_tag(product.file) %>
+        <% elsif product.file.video? %>
+            <div>
+                <%= video_tag(url_for(product.file), controls: "", class:"video") %>
+            </div>
+        <% end %>
+    </div>
+<% end %>
